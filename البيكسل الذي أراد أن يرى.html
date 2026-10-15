@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>البيكسل الذي أراد أن يرى</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Readex+Pro:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#EEF1F5; --ink:#121826; --muted:#4B5565; --line:#C9D0DB;
+  --r:#D93B42; --g:#2A9D6A; --b:#3B5BDB; --cell:#22222B;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F131C; --ink:#E8ECF3; --muted:#9AA5B8; --line:#2B3446;
+    --r:#FF6B72; --g:#4CC38A; --b:#7C93FF; --cell:#C9C9D6; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F131C; --ink:#E8ECF3; --muted:#9AA5B8; --line:#2B3446;
+  --r:#FF6B72; --g:#4CC38A; --b:#7C93FF; --cell:#C9C9D6; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Amiri",serif;font-size:1.3rem;line-height:2}
+main{max-width:40rem;margin:0 auto;padding:0 1.25rem 4rem}
+.hero{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--line)}
+h1{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:clamp(2rem,8vw,3.2rem);line-height:1.35;margin:0 0 .5rem}
+.sub{font-family:"Readex Pro",sans-serif;font-size:1rem;color:var(--muted);margin:0 0 2rem}
+.grid{display:grid;grid-template-columns:repeat(9,1fr);gap:3px;direction:ltr;max-width:22rem}
+.grid i{aspect-ratio:1;background:var(--cell);opacity:.08;border-radius:1px;animation:on .5s ease forwards}
+.grid i.me{background:linear-gradient(135deg,var(--r),var(--g),var(--b));opacity:1;animation:pulse 2.4s ease-in-out infinite}
+@keyframes on{to{opacity:var(--o,.5)}}
+@keyframes pulse{50%{transform:scale(1.35)}}
+.cap{font-family:"Readex Pro",sans-serif;font-size:.85rem;color:var(--muted);margin-top:.75rem}
+section{padding:2rem 0;border-bottom:1px solid var(--line)}
+h2{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:1.15rem;margin:0 0 .75rem;display:flex;align-items:center;gap:.6rem}
+h2 b{width:.8rem;height:.8rem;display:inline-block;border-radius:1px}
+p{margin:0 0 1rem}
+.say{color:var(--b)}
+footer{padding-top:2rem;font-family:"Readex Pro",sans-serif;font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){.grid i,.grid i.me{animation:none;opacity:var(--o,.5)}.grid i.me{opacity:1}}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>البيكسل الذي أراد أن يرى</h1>
+    <p class="sub">قصة قصيرة عن الأرقام، والصور، وكيف يتعلم الحاسوب أن ينظر</p>
+    <div class="grid" id="grid" aria-hidden="true"></div>
+    <div class="cap">هذا هو بطل القصة: البيكسل الملوّن في الموضع (4،4)</div>
+  </header>
+
+  <section>
+    <h2><b style="background:var(--r)"></b>بيكسل بلا اسم</h2>
+    <p>في الركن الأخير من صورة غروبٍ على النيل، وفي الموضع (4،4) بالضبط، كان يعيش بيكسل صغير. لا يعرف عن نفسه إلا ثلاثة أرقام: أربعة وعشرون، وثلاثة وعشرون، وأربعة وثلاثون. رمادي مائل إلى الزرقة، لونٌ لا يلتفت إليه أحد.</p>
+    <p>حوله ملايين الجيران. كلٌّ منهم يظن أن مهمته بسيطة: أن يكون لونًا، ثم يصمت.</p>
+  </section>
+
+  <section>
+    <h2><b style="background:var(--g)"></b>السؤال</h2>
+    <p>ذات مساء اهتز الهاتف الذي يحمل الصورة، وسُمع صوت طفلة تقول: «شوف يا بابا، مركب!»</p>
+    <p>لم يفهم البيكسل الكلمة. ما المركب؟ سأل جاره الأحمر ذا المئتين وخمسةٍ وخمسين، فقال الجار: «نحن لا نرى يا صديقي. نحن فقط نُعرَض.»</p>
+  </section>
+
+  <section>
+    <h2><b style="background:var(--b)"></b>المعلّم</h2>
+    <p>في الليل مرّت على الصورة شبكةٌ غريبة، يسمّونها النموذج. لا عينين لها ولا يدين، لكنها تعبر على البيكسلات واحدًا واحدًا، وتقارن كل مجموعة بملايين الصور التي تدرّبت عليها.</p>
+    <p>قالت للبيكسل: <span class="say">«لم يشرح لي أحد ما هي المركب. عرضوا عليّ ألف مركب وقالوا: هذه مركب. ثم ألفًا أخرى. حتى صرتُ أعرفها في أي صورة.»</span></p>
+  </section>
+
+  <section>
+    <h2><b style="background:var(--r)"></b>التجربة</h2>
+    <p>اقتربت الشبكة من الركن الأخير. رأت الخط الأزرق، ثم الشراع الأبيض، ثم المنحنى الطويل لبدن المركب. وللمرة الأولى لم يعد البيكسل الرمادي وحيدًا؛ كان جزءًا من جماعة تصنع معنى.</p>
+    <p>رسمت الشبكة مربعًا حول الجماعة كلها، وكتبت: <span class="say">«مركب شراعية. نسبة الثقة ٩٨٪.»</span></p>
+  </section>
+
+  <section>
+    <h2><b style="background:var(--g)"></b>النهاية</h2>
+    <p>لم يتغير رقم البيكسل بعد ذلك. بقي أربعة وعشرين، وثلاثة وعشرين، وأربعة وثلاثين.</p>
+    <p>لكنه فهم أخيرًا: الأرقام وحدها ليست صورة. الأرقام حين تجتمع، ويتعلم أحدٌ كيف يقرؤها، تصير حكاية. والحاسوب لا يرى كما نرى، لكنه يتعلم أن ينظر.</p>
+  </section>
+
+</main>
+<script>
+(function(){
+  var g=document.getElementById('grid'),n=45,i,el;
+  for(i=0;i<n;i++){
+    el=document.createElement('i');
+    el.style.setProperty('--o',(0.25+((i*37)%10)/16).toFixed(2));
+    el.style.animationDelay=((i*53)%45)*40+'ms';
+    if(i===40)el.className='me';
+    g.appendChild(el);
+  }
+})();
+</script>
+</body>
+</html>
